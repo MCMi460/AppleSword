@@ -11,6 +11,8 @@
 		59B2D7AE2B1D681800BE1998 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B2D7AD2B1D681800BE1998 /* ContentView.swift */; };
 		59B2D7B02B1D681900BE1998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59B2D7AF2B1D681900BE1998 /* Assets.xcassets */; };
 		59B2D7B32B1D681900BE1998 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59B2D7B22B1D681900BE1998 /* Preview Assets.xcassets */; };
+		59B2D7BB2B1D682A00BE1998 /* DiscordRPC.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 59B2D7BA2B1D682A00BE1998 /* DiscordRPC.sdef */; };
+		59B491652B2161740072CF05 /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 59B491642B2161740072CF05 /* SwordRPC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		59B2D7AF2B1D681900BE1998 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59B2D7B22B1D681900BE1998 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		59B2D7B42B1D681900BE1998 /* DiscordRPC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DiscordRPC.entitlements; sourceTree = "<group>"; };
+		59B2D7BA2B1D682A00BE1998 /* DiscordRPC.sdef */ = {isa = PBXFileReference; lastKnownFileType = text; path = DiscordRPC.sdef; sourceTree = "<group>"; };
+		59B2D7BC2B1D69DA00BE1998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B491652B2161740072CF05 /* SwordRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +57,10 @@
 		59B2D7AA2B1D681800BE1998 /* DiscordRPC */ = {
 			isa = PBXGroup;
 			children = (
+				59B2D7BC2B1D69DA00BE1998 /* Info.plist */,
 				59B2D7AB2B1D681800BE1998 /* DiscordRPCApp.swift */,
 				59B2D7AD2B1D681800BE1998 /* ContentView.swift */,
+				59B2D7BA2B1D682A00BE1998 /* DiscordRPC.sdef */,
 				59B2D7AF2B1D681900BE1998 /* Assets.xcassets */,
 				59B2D7B42B1D681900BE1998 /* DiscordRPC.entitlements */,
 				59B2D7B12B1D681900BE1998 /* Preview Content */,
@@ -85,6 +92,9 @@
 			dependencies = (
 			);
 			name = DiscordRPC;
+			packageProductDependencies = (
+				59B491642B2161740072CF05 /* SwordRPC */,
+			);
 			productName = DiscordRPC;
 			productReference = 59B2D7A82B1D681800BE1998 /* DiscordRPC.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +123,9 @@
 				Base,
 			);
 			mainGroup = 59B2D79F2B1D681800BE1998;
+			packageReferences = (
+				59B491632B2161740072CF05 /* XCRemoteSwiftPackageReference "SwordRPC" */,
+			);
 			productRefGroup = 59B2D7A92B1D681800BE1998 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B2D7BB2B1D682A00BE1998 /* DiscordRPC.sdef in Resources */,
 				59B2D7B32B1D681900BE1998 /* Preview Assets.xcassets in Resources */,
 				59B2D7B02B1D681900BE1998 /* Assets.xcassets in Resources */,
 			);
@@ -279,6 +293,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DiscordRPC/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +321,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DiscordRPC/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +357,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59B491632B2161740072CF05 /* XCRemoteSwiftPackageReference "SwordRPC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MCMi460/SwordRPC";
+			requirement = {
+				branch = development;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59B491642B2161740072CF05 /* SwordRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59B491632B2161740072CF05 /* XCRemoteSwiftPackageReference "SwordRPC" */;
+			productName = SwordRPC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 59B2D7A02B1D681800BE1998 /* Project object */;
 }

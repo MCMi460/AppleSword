@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="DiscordRPC Terminology">
+    <suite name="Standard Suite" code="????" description="Common classes and commands for all applications.">
+        <command name="quit" code="aevtquit" description="quit the application.">
+            <cocoa class="NSQuitCommand"/>
+        </command>
+    </suite>
+    <suite name="Discord Suite" code="disc" description="Commands and classes used for connecting to Discord through RPC.">
+        <enumeration name="eCli" code="eCli">
+            <enumerator name="default" code="kDef">
+                <cocoa integer-value="-1"/>
+            </enumerator>
+            <enumerator name="Discord" code="kDis">
+                <cocoa integer-value="0"/>
+            </enumerator>
+            <enumerator name="Discord PTB" code="kPTB">
+                <cocoa integer-value="1"/>
+            </enumerator>
+            <enumerator name="Discord Canary" code="kCny">
+                <cocoa integer-value="2"/>
+            </enumerator>
+        </enumeration>
+        <class name="application" code="capp" description="the application program">
+            <cocoa class="NSApplication"/>
+            <property name="client" code="pCli" type="eCli" description="the current client connected"/>
+        </class>
+        
+        <class name="item" code="eItm" description="an item" plural="items">
+        </class>
+        
+        
+        <command
+            name="using"
+            code="DiscUsin"
+            description="establish settings for connections (must be used on startup)">
+            <cocoa class="DiscordRPC.Using"/>
+            
+            <access-group identifier="*"/>
+            
+            <parameter code="Clie" name="client" optional="yes" description="the target Discord client to use" type="eCli">
+                <cocoa key="client"/>
+            </parameter>
+            
+            <parameter code="ApID" name="application id" description="Discord application ID (see https://discord.com/developers/applications)" type="text">
+                <cocoa key="appID"/>
+            </parameter>
+            
+            <result type="text" description="optional failure information"/>
+        </command>
+    </suite>
+</dictionary>
